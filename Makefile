@@ -1,6 +1,7 @@
 
-test:
-	echo test
-
 build:
-	docker build -t foo  .
+	docker build -t docker.io/wollfieh/getquote .
+
+push: build
+	docker push docker.io/wollfieh/getquote
+	
