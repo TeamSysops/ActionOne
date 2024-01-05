@@ -14,8 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
 
     - name: Run build
       run: make build
     - name: Run push
       run: make push
+
