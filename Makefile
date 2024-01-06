@@ -1,7 +1,8 @@
+TAG=docker.io/wollfieh/actionone
 
 build:
-	docker build -t docker.io/wollfieh/getquote .
+	docker build -t ${TAG} .
 
 push: build
-	docker push docker.io/wollfieh/getquote
+	docker push ${TAG}
 	
